@@ -43,12 +43,12 @@ $(document).ready(function () {
             else if(clas[2].checked) e[0] = 425;
             else e[0] = 425;
             
-        var e[4] = e[4] + e[4] * aa / 100,
-            e[5] = e[5] + e[5] * ab / 100,
+        var ba = e[4] + e[4] * aa / 100,
+            bb = e[5] + e[5] * ab / 100,
             c = e[3] + e[3] * a[0] / 100,
             r = e[10] + e[10] * a[2] / 100,
             i = e[11] + e[11] * a[3] / 100,
-            l = e[0] + e[1] + e[2] + c + e[4] + e[5] + e[6] + d[0] + e[7] + e[8] + e[9] + r + i + e[12] + e[13] + e[14] + e[16] + e[17],
+            l = e[0] + e[1] + e[2] + c + ba + bb + e[6] + d[0] + e[7] + e[8] + e[9] + r + i + e[12] + e[13] + e[14] + e[16] + e[17],
             o = t[0] + t[3] + t[4] + t[5] + t[6] + t[7] + t[8] + t[10] + t[11],
             g = o + t[9],
             s = m[0] + d[1],
@@ -128,12 +128,12 @@ function myFunction() {
     for (e = 0; e < 2; e++) adornment[e] = parseFloat(document.getElementById("" + adornment[e]).value), isNaN(adornment[e]) && (adornment[e] = 0);
     for (e = 0; e < 2; e++) weapon[e] = parseFloat(document.getElementById("" + weapon[e]).value), isNaN(weapon[e]) && (weapon[e] = 0);
     for (e = 0; e < 2; e++) ruby[e] = parseFloat(document.getElementById("" + ruby[e]).value), isNaN(ruby[e]) && (ruby[e] = 0);
-    var damage[4] = damage[4] + damage[4] * aa /100,
-        damage[5] = damage[5] + damage[5] * ab /100,
+    var ca = damage[4] + damage[4] * aa /100,
+        cc = damage[5] + damage[5] * ab /100,
         a = damage[3] + damage[3] * increase_damage_on_item[0] / 100,
         t = damage[10] + damage[10] * increase_damage_on_item[2] / 100,
         n = damage[11] + damage[11] * increase_damage_on_item[3] / 100,
-        m = damage[0] + damage[1] + damage[2] + a + damage[4] + damage[5] + damage[6] + ruby[0] + damage[7] + damage[8] + damage[9] + t + n + damage[12] + damage[13] + damage[14] + damage[16] + damage[17],
+        m = damage[0] + damage[1] + damage[2] + a + ca + cc + damage[6] + ruby[0] + damage[7] + damage[8] + damage[9] + t + n + damage[12] + damage[13] + damage[14] + damage[16] + damage[17],
         d = increase_damage[0] + increase_damage[3] + increase_damage[4] + increase_damage[5] + increase_damage[6] + increase_damage[7] + increase_damage[8] + increase_damage[10] + increase_damage[11],
         _ = d + increase_damage[9],
         c = weapon[0] + ruby[1],

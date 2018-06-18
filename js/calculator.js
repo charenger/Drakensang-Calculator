@@ -28,8 +28,8 @@ $(document).ready(function () {
             n = ["andornment_min_damage", "andornment_max_damage"],
             m = ["weapon_min_damage", "weapon_max_damage"],
             d = ["andornment_ruby", "weapon_ruby"];
-        var aa = document.getElementById("ring_f_increase_damage_on_item");
-        var ab = document.getElementById("ring_s_increase_damage_on_item");
+        var aa = document.getElementById("ring_f_increase_damage_on_item").value;
+        var ab = document.getElementById("ring_s_increase_damage_on_item").value;
         
         for (_ = 1; _ < 18; _++) e[_] = parseFloat(document.getElementById("" + e[_]).value), isNaN(e[_]) && (e[_] = 0);
         for (_ = 0; _ < 6; _++) a[_] = parseFloat(document.getElementById("" + a[_]).value), isNaN(a[_]) && (a[_] = 0);
@@ -118,8 +118,8 @@ var damage = ["character_damage", "amulet_damage", "cloak_damage", "belt_damage"
     critical_rate_on_item = ["andornment_critical_rate_on_item", "offhand_critical_rate_on_item"],
     onyx = ["andornment_onyx", "weapon_onyx"];
 var type = document.getElementsByName("weapon_type");
-var aa = document.getElementById("ring_f_increase_damage_on_item");
-var ab = document.getElementById("ring_s_increase_damage_on_item");
+var aa = document.getElementById("ring_f_increase_damage_on_item").value;
+var ab = document.getElementById("ring_s_increase_damage_on_item").value;
 
 function myFunction() {
     for (var e = 1; e < 18; e++) damage[e] = parseFloat(document.getElementById("" + damage[e]).value), isNaN(damage[e]) && (damage[e] = 0);

@@ -203,8 +203,11 @@ function writeData() {
     document.getElementById("" + damage[1]).value + "\n" + damage[2] + "=" +
     document.getElementById("" + damage[2]).value + "\n" + damage[3] + "=" +
     document.getElementById("" + damage[3]).value + "\n" + damage[4] + "=" +
-    document.getElementById("" + damage[4]).value + "\n" + damage[5] + "=" +
-    document.getElementById("" + damage[5]).value + "\n" + damage[6] + "=" +
+    document.getElementById("" + damage[4]).value + "\n" +
+    "ring_f_increase_damage_on_item" + "=" + document.getElementById("ring_f_increase_damage_on_item").value + "\n" +
+    damage[5] + "=" +    document.getElementById("" + damage[5]).value + "\n" + 
+    "ring_s_increase_damage_on_item" + "=" + document.getElementById("ring_s_increase_damage_on_item").value + "\n" 
+    + damage[6] + "=" +
     document.getElementById("" + damage[6]).value + "\n" + damage[7] + "=" +
     document.getElementById("" + damage[7]).value + "\n" + damage[8] + "=" +
     document.getElementById("" + damage[8]).value + "\n" + damage[9] + "=" +

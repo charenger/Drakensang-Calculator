@@ -261,8 +261,7 @@ function writeData() {
     document.getElementById("" + critical_base[8]).value + "\n" + critical_rate_on_item[0] + "=" +
     document.getElementById("" + critical_rate_on_item[0]).value + "\n" + critical_rate_on_item[1] +
     "=" + document.getElementById("" + critical_rate_on_item[1]).value + "\n" + onyx[0] + "=" +
-    document.getElementById("" + onyx[0]).value + "\n" + onyx[1] + "=" + document.getElementById("" + onyx[1]).value + "\n"
-    + aa + "=" + document.getElementById("" + aa).value + "\n" + ab + "=" + document.getElementById("" + ab).value + "\n";
+    document.getElementById("" + onyx[0]).value + "\n" + onyx[1] + "=" + document.getElementById("" + onyx[1]).value + "\n";
     return console.log(e), e
 }
 

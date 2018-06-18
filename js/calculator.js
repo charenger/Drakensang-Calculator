@@ -28,6 +28,9 @@ $(document).ready(function () {
             n = ["andornment_min_damage", "andornment_max_damage"],
             m = ["weapon_min_damage", "weapon_max_damage"],
             d = ["andornment_ruby", "weapon_ruby"];
+        var aa = document.getElementById("ring_f_increase_damage_on_item");
+        var ab = document.getElementById("ring_s_increase_damage_on_item");
+        
         for (_ = 1; _ < 18; _++) e[_] = parseFloat(document.getElementById("" + e[_]).value), isNaN(e[_]) && (e[_] = 0);
         for (_ = 0; _ < 6; _++) a[_] = parseFloat(document.getElementById("" + a[_]).value), isNaN(a[_]) && (a[_] = 0);
         for (_ = 0; _ < 12; _++) t[_] = parseFloat(document.getElementById("" + t[_]).value), isNaN(t[_]) && (t[_] = 0);
@@ -39,7 +42,10 @@ $(document).ready(function () {
             else if(clas[1].checked) e[0] = 360;
             else if(clas[2].checked) e[0] = 425;
             else e[0] = 425;
-        var c = e[3] + e[3] * a[0] / 100,
+            
+        var e[4] = e[4] + e[4] * aa / 100,
+            e[5] = e[5] + e[5] * ab / 100,
+            c = e[3] + e[3] * a[0] / 100,
             r = e[10] + e[10] * a[2] / 100,
             i = e[11] + e[11] * a[3] / 100,
             l = e[0] + e[1] + e[2] + c + e[4] + e[5] + e[6] + d[0] + e[7] + e[8] + e[9] + r + i + e[12] + e[13] + e[14] + e[16] + e[17],
@@ -112,6 +118,8 @@ var damage = ["character_damage", "amulet_damage", "cloak_damage", "belt_damage"
     critical_rate_on_item = ["andornment_critical_rate_on_item", "offhand_critical_rate_on_item"],
     onyx = ["andornment_onyx", "weapon_onyx"];
 var type = document.getElementsByName("weapon_type");
+var aa = document.getElementById("ring_f_increase_damage_on_item");
+var ab = document.getElementById("ring_s_increase_damage_on_item");
 
 function myFunction() {
     for (var e = 1; e < 18; e++) damage[e] = parseFloat(document.getElementById("" + damage[e]).value), isNaN(damage[e]) && (damage[e] = 0);
@@ -120,7 +128,9 @@ function myFunction() {
     for (e = 0; e < 2; e++) adornment[e] = parseFloat(document.getElementById("" + adornment[e]).value), isNaN(adornment[e]) && (adornment[e] = 0);
     for (e = 0; e < 2; e++) weapon[e] = parseFloat(document.getElementById("" + weapon[e]).value), isNaN(weapon[e]) && (weapon[e] = 0);
     for (e = 0; e < 2; e++) ruby[e] = parseFloat(document.getElementById("" + ruby[e]).value), isNaN(ruby[e]) && (ruby[e] = 0);
-    var a = damage[3] + damage[3] * increase_damage_on_item[0] / 100,
+    var damage[4] = damage[4] + damage[4] * aa /100,
+        damage[5] = damage[5] + damage[5] * ab /100,
+        a = damage[3] + damage[3] * increase_damage_on_item[0] / 100,
         t = damage[10] + damage[10] * increase_damage_on_item[2] / 100,
         n = damage[11] + damage[11] * increase_damage_on_item[3] / 100,
         m = damage[0] + damage[1] + damage[2] + a + damage[4] + damage[5] + damage[6] + ruby[0] + damage[7] + damage[8] + damage[9] + t + n + damage[12] + damage[13] + damage[14] + damage[16] + damage[17],
@@ -193,9 +203,9 @@ function writeData() {
     document.getElementById("" + damage[1]).value + "\n" + damage[2] + "=" +
     document.getElementById("" + damage[2]).value + "\n" + damage[3] + "=" +
     document.getElementById("" + damage[3]).value + "\n" + damage[4] + "=" +
-    document.getElementById("" + damage[3]).value + "\n" + damage[5] + "=" +
-    document.getElementById("" + damage[3]).value + "\n" + damage[6] + "=" +
-    document.getElementById("" + damage[3]).value + "\n" + damage[7] + "=" +
+    document.getElementById("" + damage[4]).value + "\n" + damage[5] + "=" +
+    document.getElementById("" + damage[5]).value + "\n" + damage[6] + "=" +
+    document.getElementById("" + damage[6]).value + "\n" + damage[7] + "=" +
     document.getElementById("" + damage[7]).value + "\n" + damage[8] + "=" +
     document.getElementById("" + damage[8]).value + "\n" + damage[9] + "=" +
     document.getElementById("" + damage[9]).value + "\n" + damage[10] + "=" +
@@ -251,7 +261,8 @@ function writeData() {
     document.getElementById("" + critical_base[8]).value + "\n" + critical_rate_on_item[0] + "=" +
     document.getElementById("" + critical_rate_on_item[0]).value + "\n" + critical_rate_on_item[1] +
     "=" + document.getElementById("" + critical_rate_on_item[1]).value + "\n" + onyx[0] + "=" +
-    document.getElementById("" + onyx[0]).value + "\n" + onyx[1] + "=" + document.getElementById("" + onyx[1]).value + "\n";
+    document.getElementById("" + onyx[0]).value + "\n" + onyx[1] + "=" + document.getElementById("" + onyx[1]).value + "\n"
+    + aa + "=" + document.getElementById("" + aa).value + "\n" + ab + "=" + document.getElementById("" + ab).value + "\n";
     return console.log(e), e
 }
 

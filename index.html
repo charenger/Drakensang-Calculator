@@ -8,535 +8,569 @@
     <meta name="description" content="Drakensang Calculator">
     <meta name="keywords" content="Dso,Drakensang, Dro, Calculator">
     <meta name="author" content="Chareger">
-	<title>DSO Calculator</title>
+    <title>DSO Calculator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-        <table class="table table-dark">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Damage( base )</th>
-                    <th>Increased damage on item</th>
-                    <th>Increased Damage</th>
-                    <th>Stones</th>
-                    <th>Other</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Character</td>
-                    <td colspan="4"></td>
-                    <td>
-                        <label><input type="radio" name="character" checked="checked" value="mage">Mage</label>
-                        <label><input type="radio" name="character" value="war">Warrior</label>
-                        <label><input type="radio" name="character" value="dwarf">Dwarf</label>
-                        <label><input type="radio" name="character" value="ranger">Ranger</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Amulet</td>
-                    <td>
-                        <input type="number" id="amulet_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Cloak</td>
-                    <td>
-                        <input type="number" id="cloak_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Belt</td>
-                    <td>
-                        <input type="number" id="belt_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="belt_increase_damage_on_item">
-                    </td>
-                    <td>
-                        <input type="number" id="belt_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>First ring</td>
-                    <td>
-                        <input type="number" id="ring_f_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="ring_f_increase_damage_on_item">
-                    </td>
-                    <td>
-                        <input type="number" id="ring_f_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Second ring</td>
-                    <td>
-                        <input type="number" id="ring_s_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="ring_s_increase_damage_on_item">
-                    </td>
-                    <td>
-                        <input type="number" id="ring_s_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Min. andornment</td>
-                    <td>
-                        <input type="number" id="andornment_min_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Max. andornment</td>
-                    <td>
-                        <input type="number" id="andornment_max_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Andornment</td>
-                    <td>
-                        <input type="number" id="andornment_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="andornment_increase_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="andornment_ruby">
-                    </td>
-                    <td><input disabled="disabled"</td>
-                </tr>
-                <tr>
-                    <td>Min. weapon</td>
-                    <td>
-                        <input type="number" id="weapon_min_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Max. weapon</td>
-                    <td>
-                        <input type="number" id="weapon_max_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Weapon</td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="weapon_increase_damage_on_item">
-                    </td>
-                    <td>
-                        <input type="number" id="weapon_increase_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="weapon_ruby">
-                    </td>
-                    <td>
-                        <label>
+    <table class="table table-dark" id="table_dmg">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Damage( base )</th>
+                <th>Increased damage on item</th>
+                <th>Increased Damage</th>
+                <th>Stones</th>
+                <th>Other</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Character</td>
+                <td id="mage"><label><input type="radio" name="character" checked="checked" value="mage"></label></td>
+                <td id="tank"><label><input type="radio" name="character" value="war"></label></td>
+                <td id="dwarf"><label><input type="radio" name="character" value="dwarf"></label></td>
+                <td id="ranger"><label><input type="radio" name="character" value="ranger"></label></td>
+            </tr>
+            <tr>
+                <td>Amulet</td>
+                <td>
+                    <input type="number" id="amulet_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Cloak</td>
+                <td>
+                    <input type="number" id="cloak_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Belt</td>
+                <td>
+                    <input type="number" id="belt_damage">
+                </td>
+                <td>
+                    <input type="number" id="belt_increase_damage_on_item">
+                </td>
+                <td>
+                    <input type="number" id="belt_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>First ring</td>
+                <td>
+                    <input type="number" id="ring_f_damage">
+                </td>
+                <td>
+                    <input type="number" id="ring_f_increase_damage_on_item">
+                </td>
+                <td>
+                    <input type="number" id="ring_f_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Second ring</td>
+                <td>
+                    <input type="number" id="ring_s_damage">
+                </td>
+                <td>
+                    <input type="number" id="ring_s_increase_damage_on_item">
+                </td>
+                <td>
+                    <input type="number" id="ring_s_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Min. andornment</td>
+                <td>
+                    <input type="number" id="andornment_min_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Max. andornment</td>
+                <td>
+                    <input type="number" id="andornment_max_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Andornment</td>
+                <td>
+                    <input type="number" id="andornment_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="andornment_increase_damage">
+                </td>
+                <td>
+                    <input type="number" id="andornment_ruby">
+                </td>
+                <td><input disabled="disabled" </td>
+            </tr>
+            <tr>
+                <td>Min. weapon</td>
+                <td>
+                    <input type="number" id="weapon_min_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Max. weapon</td>
+                <td>
+                    <input type="number" id="weapon_max_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Weapon</td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="weapon_increase_damage_on_item">
+                </td>
+                <td>
+                    <input type="number" id="weapon_increase_damage">
+                </td>
+                <td>
+                    <input type="number" id="weapon_ruby">
+                </td>
+                <td>
+                    <label>
                             <input type="radio" name="weapon_type" value="blood">
                             Blood
                         </label>
-                        <label>
+                    <label>
                             <input type="radio" name="weapon_type" value="other" checked>
                             Other
                         </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Helmet</td>
-                    <td>
-                        <input type="number" id="helmet_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="helmet_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Pouldrons</td>
-                    <td>
-                        <input type="number" id="pouldrons_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="pouldrons_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                     <td>Torso</td>
-                     <td>
-                        <input type="number" id="torso_damage">
-                     </td>
-                     <td><input disabled="disabled"></td>
-                     <td>
-                        <input type="number" id="torso_increase_damage">
-                     </td>
-                     <td><input disabled="disabled"></td>
-                     <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Gloves</td>
-                    <td>
-                        <input type="number" id="glove_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="glove_increase_damage_on_item">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Boots</td>
-                    <td>
-                        <input type="number" id="boots_damage">
-                    </td>
-                    <td>
-                        <input type="number" id="boots_increase_damage_on_item">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Dragan set</td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="dragan_increase_damage_on_item">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Increase damage on weapon(wisdom)</td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="behemoth_increase_damage_on_item">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Increase damage(wisdom)</td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="wisdom_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Max damage set bonus</td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="max_damage_set_bonus_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Set bonus</td>
-                    <td>
-                        <input type="number" id="set_bonus_f_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Set bonus</td>
-                    <td>
-                        <input type="number" id="set_bonus_s_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Set bonus</td>
-                    <td>
-                        <input type="number" id="set_bonus_t_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Green essence</td>
-                    <td>
-                        <input type="number" id="essence_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Pet</td>
-                    <td>
-                        <input type="number" id="pet_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="pet_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td>Buff</td>
-                    <td>
-                        <input type="number" id="buff_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td>
-                        <input type="number" id="buff_increase_damage">
-                    </td>
-                    <td><input disabled="disabled"></td>
-                    <td><input disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"></td>
-                    <td colspan="2">
-                        <button id="calculate_damage">Calculate Damage Output</button>
-                    </td>
-                    <td colspan="2"></td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <table class="table table-dark">
-            <tbody>
-                <tr>
-                    <td><input disabled="disabled" hidden="hidden"></td>
-                    <td>Min damage</td>
-                    <td>Max damage</td>
-    
-                </tr>
-    
-                <tr>
-                    <td>                        No Essence                    </td>
-                    <td><input type="number" id="min_no_ess" disabled="disabled"></td>
-                    <td><input type="number" id="max_no_ess" disabled="disabled"></td>
-                </tr>
-                <tr>
-                    <td style="color: green">                            Green Essence                        </td>
-                    <td><input type="number" id="min_green_ess" disabled="disabled" style="color: green"></td>
-                    <td><input type="number" id="max_green_ess" disabled="disabled" style="color: green"></td>
-                </tr>
-                <tr>
-                    <td style="color: blue">                            Blue Essence                        </td>
-                    <td><input type="number" id="min_blue_ess" disabled="disabled" style="color: blue"></td>
-                    <td><input type="number" id="max_blue_ess" disabled="disabled" style="color: blue"></td>
-                </tr>
-                <tr>
-                    <td style="color: purple">                            Purple Essence                        </td>
-                    <td><input type="number" id="min_purple_ess" disabled="disabled" style="color: purple"></td>
-                    <td><input type="number" id="max_purple_ess" disabled="disabled" style="color: purple"></td>
-                </tr>
-                <tr>
-                    <td style="color: red">                            Red Essence                        </td>
-                    <td><input type="number" id="min_red_ess" disabled="disabled" style="color: red"></td>
-                    <td><input type="number" id="max_red_ess" disabled="disabled" style="color: red"></td>
-                </tr>
-                <tr>
-    
-                    <td><input disabled="disabled" hidden="hidden"></td>
-                    <td><input disabled="disabled" hidden="hidden"></td>
-                    <td><input disabled="disabled" hidden="hidden"></td>
-                    <td id="DPI">DPI: </td>
-                    <td><input type="number" id="dpi_ne" disabled="disabled"></td>
-                </tr>
-            </tbody>
-        </table>
-            
-            <table class="table table-dark">
-                <tbody>
-                    <tr>
-                        <td>Item</td>
-                        <td>Critical(Base)</td>
-                        <td>Increased Critical Rate on Item</td>
-                        <td>Increased Critical Rate</td>
-                        <td>Onyx</td>
-                    </tr>
-                    <tr>
-                        <td>Amulet</td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="amulet_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Cloak</td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="cloak_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Belt</td>
-                        <td><input type="number" id="belt_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Ring 1</td>
-                        <td><input type="number" id="ring_f_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="ring_f_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Ring 2</td>
-                        <td><input type="number" id="ring_s_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="ring_s_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Andornment</td>
-                        <td><input type="number" id="andornment_critical_base"></td>
-                        <td><input type="number" id="andornment_critical_rate_on_item" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="andornment_onyx" placeholder="Onyx"></td>
-                    </tr>
-                    <tr>
-                        <td>Weapon</td>
-                        <td><input type="number" id="weapon_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="weapon_onyx" placeholder="Onyx"></td>
-                    </tr>
-                    <tr>
-                        <td>Offhand</td>
-                        <td><input type="number" id="offhand_critical_base"></td>
-                        <td><input type="number" id="offhand_critical_rate_on_item" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Helmet</td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="helmet_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Boots</td>
-                        <td><input disabled="disabled"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="boots_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Set Bonus 1</td>
-                        <td><input type="number" id="set_bonus_f_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="set_bonus_f_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Set Bonus 1</td>
-                        <td><input type="number" id="set_bonus_s_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="set_bonus_s_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td>Pet</td>
-                        <td><input type="number" id="pet_critical_base"></td>
-                        <td><input disabled="disabled"></td>
-                        <td><input type="number" id="pet_critical_rate" placeholder="%"></td>
-                        <td><input disabled="disabled"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5"><button id="calcCR">Calculate Critical Rate</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <table class="table table-dark">
-                <tbody>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>Norm-Fatal</td>
-                        <td>Inf1</td>
-                        <td>Inf2</td>
-                        <td>Inf3</td>
-                        <td>Value</td>
-                    </tr>
-                    <tr>
-                        <td>Critical Rate</td>
-                        <td><input type="number" id="critical_rate" max="80" oninput="maxCritValueCheck(this)" placeholder="%"></td>
-                        <td><input type="number" id="critical_rate_inf1" max="80"  placeholder="Inf1" disabled></td>
-                        <td><input type="number" id="critical_rate_inf2" max="80"  placeholder="Inf2" disabled></td>
-                        <td><input type="number" id="critical_rate_inf3" max="80"  placeholder="Inf3" disabled></td>
-                        <td><input type="number" id="critical_rate_val" placeholder="Value" disabled></td>
-                    </tr>
-                    <tr>
-                        <td>Critical Damage</td>
-                        <td><input type="number" id="critical_damage" placeholder="%"></td>
-                    </tr>
-                    <tr>
-                        <td>Attack Speed</td>
-                        <td><input type="number" id="attack_speed" max="4.0" oninput="maxAttackSpeedValueCheck(this)" placeholder="1.0"></td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="file_load_save_center">
-                <p>Filename to Save As: </p>
-                <input id="inputFileNameToSaveAs"><button onclick="save_text_as_file()">Save data to File</button>
-                <span style="margin-left: 10%; color: white;">Select file to load:</span>
-                <input type="file" id="fileToLoad" onchange="loadFileAsText()">
-            </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Helmet</td>
+                <td>
+                    <input type="number" id="helmet_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="helmet_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Pouldrons</td>
+                <td>
+                    <input type="number" id="pouldrons_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="pouldrons_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Torso</td>
+                <td>
+                    <input type="number" id="torso_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="torso_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Gloves</td>
+                <td>
+                    <input type="number" id="gloves_damage">
+                </td>
+                <td>
+                    <input type="number" id="gloves_increase_damage_on_item">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Boots</td>
+                <td>
+                    <input type="number" id="boots_damage">
+                </td>
+                <td>
+                    <input type="number" id="boots_increase_damage_on_item">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Dragan set</td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="dragan_increase_damage_on_item">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Increase damage on weapon(wisdom)</td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="behemoth_increase_damage_on_item">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Increase damage(wisdom)</td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="wisdom_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Max damage set bonus</td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="max_damage_set_bonus_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Set bonus</td>
+                <td>
+                    <input type="number" id="set_bonus_f_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Set bonus</td>
+                <td>
+                    <input type="number" id="set_bonus_s_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Set bonus</td>
+                <td>
+                    <input type="number" id="set_bonus_t_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Green essence</td>
+                <td>
+                    <input type="number" id="essence_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Pet</td>
+                <td>
+                    <input type="number" id="pet_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="pet_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Buff</td>
+                <td>
+                    <input type="number" id="buff_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td>
+                    <input type="number" id="buff_increase_damage">
+                </td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="2">
+                    <button id="calculate_damage">Calculate Damage Output</button>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
 
-        
+    <table class="table table-dark">
+        <tbody>
+            <tr>
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td>Min damage</td>
+                <td>Max damage</td>
+
+            </tr>
+
+            <tr>
+                <td> No Essence </td>
+                <td><input type="number" id="min_no_ess" disabled="disabled"></td>
+                <td><input type="number" id="max_no_ess" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td style="color: green"> Green Essence </td>
+                <td><input type="number" id="min_green_ess" disabled="disabled" style="color: green"></td>
+                <td><input type="number" id="max_green_ess" disabled="disabled" style="color: green"></td>
+            </tr>
+            <tr>
+                <td style="color: blue"> Blue Essence </td>
+                <td><input type="number" id="min_blue_ess" disabled="disabled" style="color: blue"></td>
+                <td><input type="number" id="max_blue_ess" disabled="disabled" style="color: blue"></td>
+            </tr>
+            <tr>
+                <td style="color: purple"> Purple Essence </td>
+                <td><input type="number" id="min_purple_ess" disabled="disabled" style="color: purple"></td>
+                <td><input type="number" id="max_purple_ess" disabled="disabled" style="color: purple"></td>
+            </tr>
+            <tr>
+                <td style="color: red"> Red Essence </td>
+                <td><input type="number" id="min_red_ess" disabled="disabled" style="color: red"></td>
+                <td><input type="number" id="max_red_ess" disabled="disabled" style="color: red"></td>
+            </tr>
+            <tr>
+
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td id="DPI">DPI: </td>
+                <td><input type="number" id="dpi_ne" disabled="disabled"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-dark">
+        <tbody>
+            <tr>
+                <td>Item</td>
+                <td>Critical(Base)</td>
+                <td>Increased Critical Rate on Item</td>
+                <td>Increased Critical Rate</td>
+                <td>Onyx</td>
+            </tr>
+            <tr>
+                <td>Amulet</td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="amulet_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Cloak</td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="cloak_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Belt</td>
+                <td><input type="number" id="belt_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Ring 1</td>
+                <td><input type="number" id="ring_f_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="ring_f_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Ring 2</td>
+                <td><input type="number" id="ring_s_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="ring_s_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Andornment</td>
+                <td><input type="number" id="andornment_critical_base"></td>
+                <td><input type="number" id="andornment_critical_rate_on_item" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="andornment_onyx" placeholder="Onyx"></td>
+            </tr>
+            <tr>
+                <td>Weapon</td>
+                <td><input type="number" id="weapon_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="weapon_onyx" placeholder="Onyx"></td>
+            </tr>
+            <tr>
+                <td>Offhand</td>
+                <td><input type="number" id="offhand_critical_base"></td>
+                <td><input type="number" id="offhand_critical_rate_on_item" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Helmet</td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="helmet_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Boots</td>
+                <td><input disabled="disabled"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="boots_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Set Bonus 1</td>
+                <td><input type="number" id="set_bonus_f_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="set_bonus_f_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Set Bonus 1</td>
+                <td><input type="number" id="set_bonus_s_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="set_bonus_s_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Pet</td>
+                <td><input type="number" id="pet_critical_base"></td>
+                <td><input disabled="disabled"></td>
+                <td><input type="number" id="pet_critical_rate" placeholder="%"></td>
+                <td><input disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td colspan="5"><button id="calcCR">Calculate Critical Rate</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-dark">
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>Norm-Fatal</td>
+                <td>Inf1</td>
+                <td>Inf2</td>
+                <td>Inf3</td>
+                <td>Value</td>
+            </tr>
+            <tr>
+                <td>Critical Rate</td>
+                <td><input type="number" id="critical_rate" max="80" oninput="maxCritValueCheck(this)" placeholder="%"></td>
+                <td><input type="number" id="critical_rate_inf1" max="80" placeholder="Inf1" disabled></td>
+                <td><input type="number" id="critical_rate_inf2" max="80" placeholder="Inf2" disabled></td>
+                <td><input type="number" id="critical_rate_inf3" max="80" placeholder="Inf3" disabled></td>
+                <td><input type="number" id="critical_rate_val" placeholder="Value" disabled></td>
+            </tr>
+            <tr>
+                <td>Critical Damage</td>
+                <td><input type="number" id="critical_damage" placeholder="%"></td>
+            </tr>
+            <tr>
+                <td>Attack Speed</td>
+                <td><input type="number" id="attack_speed" max="4.0" oninput="maxAttackSpeedValueCheck(this)" placeholder="1.0"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="file_load_save_center">
+       <h3 style="color: red;">Save and file load available soon</h3>
+        <p>Filename to Save As: </p>
+        <input id="inputFileNameToSaveAs" disabled="disabled"><button onclick="save_text_as_file()" disabled="disabled">Save data to File</button>
+        <span style="margin-left: 10%; color: white;">Select file to load:</span>
+        <input type="file" id="fileToLoad" onchange="loadFileAsText()" disabled="disabled">
+    </div>
+
+
     <script src="js/calculator.js"></script>
+    <script>
+    document.getElementById("dwarf").addEventListener("click", dwarf);
+	document.getElementById("tank").addEventListener("click", tank);
+	document.getElementById("mage").addEventListener("click", mage);
+	document.getElementById("ranger").addEventListener("click", ranger);
+
+	function dwarf(){
+		document.getElementById("dwarf").style.backgroundColor = "#0d0e0f";
+		document.getElementById("tank").style.backgroundColor = "#212529";
+		document.getElementById("mage").style.backgroundColor = "#212529";
+		document.getElementById("ranger").style.backgroundColor = "#212529";
+	}
+	
+	function tank(){
+		document.getElementById("dwarf").style.backgroundColor = "#212529";
+		document.getElementById("tank").style.backgroundColor = "#0d0e0f";
+		document.getElementById("mage").style.backgroundColor = "#212529";
+		document.getElementById("ranger").style.backgroundColor = "#212529";
+	}
+	
+	function mage(){
+		document.getElementById("dwarf").style.backgroundColor = "#212529";
+		document.getElementById("tank").style.backgroundColor = "#212529";
+		document.getElementById("mage").style.backgroundColor = "#0d0e0f";
+		document.getElementById("ranger").style.backgroundColor = "#212529";
+	}
+	
+	function ranger(){
+		document.getElementById("dwarf").style.backgroundColor = "#212529";
+		document.getElementById("tank").style.backgroundColor = "#212529";
+		document.getElementById("mage").style.backgroundColor = "#212529";
+		document.getElementById("ranger").style.backgroundColor = "#0d0e0f";
+	}
+
+    </script>
 </body>
 </html>

@@ -11,10 +11,53 @@
     <title>DSO Calculator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <div id="menu">
+        <ul id="accordion" class="accordion">
+            <li class="default open">
+                <div class="link"><i class="fa fa-crosshairs"></i>Damage<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#character">Character</a></li>
+                    <li><a href="#andornment_min_damage">Andornment</a></li>
+                    <li><a href="#weapon_min_damage">Weapon</a></li>
+                    <li><a href="#dragan_increase_damage_on_item">Dragan</a></li>
+                    <li><a href="#set_bonus_f_damage">Set bonus</a></li>
+                    <li><a href="#buff_damage">Buff</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-code"></i>Critical<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#amulet_critical_rate">Amulet</a></li>
+                    <li><a href="#ring_f_critical_base">Ring</a></li>
+                    <li><a href="#andornment_critical_base">Andornment</a></li>
+                    <li><a href="#set_bonus_f_critical_base">Bonus</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-mobile"></i>Output stats<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#critical_op_table">Critical hit rate</a></li>
+                    <li><a href="#damage_op_table">Damage</a></li>
+                    <li><a href="#increase_damage">Total increase damage</a></li>
+                    <li><a href="#total_damage">Total damage in items</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-globe"></i>Save/ load<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#inputFileNameToSaveAs">Save</a></li>
+                    <li><a href="#fileToLoad">Load</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
     <table class="table table-dark" id="table_dmg">
         <thead>
             <tr>
@@ -28,7 +71,7 @@
         </thead>
         <tbody>
             <tr>
-                <td>Character</td>
+                <td id="character">Character</td>
                 <td id="mage"><label><input type="radio" name="character" checked="checked" value="mage"></label></td>
                 <td id="tank"><label><input type="radio" name="character" value="war"></label></td>
                 <td id="dwarf"><label><input type="radio" name="character" value="dwarf"></label></td>
@@ -347,50 +390,7 @@
         </tbody>
     </table>
 
-    <table class="table table-dark">
-        <tbody>
-            <tr>
-                <td><input disabled="disabled" hidden="hidden"></td>
-                <td>Min damage</td>
-                <td>Max damage</td>
-
-            </tr>
-
-            <tr>
-                <td> No Essence </td>
-                <td><input type="number" id="min_no_ess" disabled="disabled"></td>
-                <td><input type="number" id="max_no_ess" disabled="disabled"></td>
-            </tr>
-            <tr>
-                <td style="color: green"> Green Essence </td>
-                <td><input type="number" id="min_green_ess" disabled="disabled" style="color: green"></td>
-                <td><input type="number" id="max_green_ess" disabled="disabled" style="color: green"></td>
-            </tr>
-            <tr>
-                <td style="color: blue"> Blue Essence </td>
-                <td><input type="number" id="min_blue_ess" disabled="disabled" style="color: blue"></td>
-                <td><input type="number" id="max_blue_ess" disabled="disabled" style="color: blue"></td>
-            </tr>
-            <tr>
-                <td style="color: purple"> Purple Essence </td>
-                <td><input type="number" id="min_purple_ess" disabled="disabled" style="color: purple"></td>
-                <td><input type="number" id="max_purple_ess" disabled="disabled" style="color: purple"></td>
-            </tr>
-            <tr>
-                <td style="color: red"> Red Essence </td>
-                <td><input type="number" id="min_red_ess" disabled="disabled" style="color: red"></td>
-                <td><input type="number" id="max_red_ess" disabled="disabled" style="color: red"></td>
-            </tr>
-            <tr>
-
-                <td><input disabled="disabled" hidden="hidden"></td>
-                <td><input disabled="disabled" hidden="hidden"></td>
-                <td><input disabled="disabled" hidden="hidden"></td>
-                <td id="DPI">DPI: </td>
-                <td><input type="number" id="dpi_ne" disabled="disabled"></td>
-            </tr>
-        </tbody>
-    </table>
+    
 
     <table class="table table-dark">
         <tbody>
@@ -498,7 +498,7 @@
         </tbody>
     </table>
 
-    <table class="table table-dark">
+    <table class="table table-dark" id="critical_op_table">
         <tbody>
             <tr>
                 <td>&nbsp;</td>
@@ -527,50 +527,79 @@
         </tbody>
     </table>
 
+   <table class="table table-dark" id="damage_op_table">
+        <tbody>
+            <tr>
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td>Min damage</td>
+                <td>Max damage</td>
+
+            </tr>
+
+            <tr>
+                <td> No Essence </td>
+                <td><input type="number" id="min_no_ess" disabled="disabled"></td>
+                <td><input type="number" id="max_no_ess" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td style="color: green"> Green Essence </td>
+                <td><input type="number" id="min_green_ess" disabled="disabled" style="color: green"></td>
+                <td><input type="number" id="max_green_ess" disabled="disabled" style="color: green"></td>
+            </tr>
+            <tr>
+                <td style="color: blue"> Blue Essence </td>
+                <td><input type="number" id="min_blue_ess" disabled="disabled" style="color: blue"></td>
+                <td><input type="number" id="max_blue_ess" disabled="disabled" style="color: blue"></td>
+            </tr>
+            <tr>
+                <td style="color: purple"> Purple Essence </td>
+                <td><input type="number" id="min_purple_ess" disabled="disabled" style="color: purple"></td>
+                <td><input type="number" id="max_purple_ess" disabled="disabled" style="color: purple"></td>
+            </tr>
+            <tr>
+                <td style="color: red"> Red Essence </td>
+                <td><input type="number" id="min_red_ess" disabled="disabled" style="color: red"></td>
+                <td><input type="number" id="max_red_ess" disabled="disabled" style="color: red"></td>
+            </tr>
+            <tr>
+
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td><input disabled="disabled" hidden="hidden"></td>
+                <td id="DPI">DPI: </td>
+                <td><input type="number" id="dpi_ne" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Increase damage(total)</td>
+                <td><input type="number" id="increase_damage" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Total damage</td>
+                <td><input type="number" id="total_damage" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Weapon min damage with rubies</td>
+                <td><input type="number" id="weapon_mn" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td>Weapon max damage with rubies</td>
+                <td><input type="number" id="weapon_mx" disabled="disabled"></td>
+            </tr>
+        </tbody>
+    </table>
+   
     <div class="file_load_save_center">
-       <h3 style="color: red;">Save and file load available soon</h3>
+        <h3 style="color: red;">Save and file load available soon</h3>
         <p>Filename to Save As: </p>
         <input id="inputFileNameToSaveAs" disabled="disabled"><button onclick="save_text_as_file()" disabled="disabled">Save data to File</button>
         <span style="margin-left: 10%; color: white;">Select file to load:</span>
         <input type="file" id="fileToLoad" onchange="loadFileAsText()" disabled="disabled">
     </div>
-
+</div>
 
     <script src="js/calculator.js"></script>
-    <script>
-    document.getElementById("dwarf").addEventListener("click", dwarf);
-	document.getElementById("tank").addEventListener("click", tank);
-	document.getElementById("mage").addEventListener("click", mage);
-	document.getElementById("ranger").addEventListener("click", ranger);
-
-	function dwarf(){
-		document.getElementById("dwarf").style.backgroundColor = "#0d0e0f";
-		document.getElementById("tank").style.backgroundColor = "#212529";
-		document.getElementById("mage").style.backgroundColor = "#212529";
-		document.getElementById("ranger").style.backgroundColor = "#212529";
-	}
-	
-	function tank(){
-		document.getElementById("dwarf").style.backgroundColor = "#212529";
-		document.getElementById("tank").style.backgroundColor = "#0d0e0f";
-		document.getElementById("mage").style.backgroundColor = "#212529";
-		document.getElementById("ranger").style.backgroundColor = "#212529";
-	}
-	
-	function mage(){
-		document.getElementById("dwarf").style.backgroundColor = "#212529";
-		document.getElementById("tank").style.backgroundColor = "#212529";
-		document.getElementById("mage").style.backgroundColor = "#0d0e0f";
-		document.getElementById("ranger").style.backgroundColor = "#212529";
-	}
-	
-	function ranger(){
-		document.getElementById("dwarf").style.backgroundColor = "#212529";
-		document.getElementById("tank").style.backgroundColor = "#212529";
-		document.getElementById("mage").style.backgroundColor = "#212529";
-		document.getElementById("ranger").style.backgroundColor = "#0d0e0f";
-	}
-
-    </script>
+    <script src="js/character.js"></script>
+    <script src="js/menu.js"></script>
 </body>
+
 </html>

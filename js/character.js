@@ -35,3 +35,4 @@ function ranger() {
     document.getElementById("mage").style.backgroundColor = "#212529";
     document.getElementById("ranger").style.backgroundColor = "#0d0e0f";
 }
+ 

@@ -596,7 +596,12 @@
         <input type="file" id="fileToLoad" onchange="loadFileAsText()" disabled="disabled">
     </div>
 </div>
-
+    <script>
+        $('a[href^="#"]').on("click",function(e){
+          e.preventDefault();
+          return false;
+        });
+    </script>
     <script src="js/calculator.js"></script>
     <script src="js/character.js"></script>
     <script src="js/menu.js"></script>
